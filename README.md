@@ -2,15 +2,15 @@
 
 Minimal static portfolio for Mohammad-Reza Azizi.
 
-## Add your profile photo
+## Profile photo
 
-Place your photo at:
+The photo lives at:
 
 ```text
 assets/profile.jpg
 ```
 
-Recommended: a square JPG, at least 600 × 600 px, under 500 KB. Until then, the site shows the included initials placeholder.
+To change it, replace that file with a square JPG, at least 600 × 600 px, under 500 KB. If it's missing, the site falls back to the initials placeholder.
 
 ## Preview locally
 
