@@ -1,12 +1,16 @@
 ---
 layout: default
 ---
-<article class="card content-card post" aria-labelledby="page-title">
-  <p class="post-back"><a href="{{ '/blog/' | relative_url }}">← All posts</a></p>
-  <h1 id="page-title" class="page-title">{{ page.title }}</h1>
-  <time class="post-date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+<article>
+  <header class="wrap page-head post-head">
+    <p class="eyebrow"><a class="back" href="{{ '/blog/' | relative_url }}">← All posts</a></p>
+    <h1 id="page-title">{{ page.title }}</h1>
+    <time class="mono" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+  </header>
 
-  <div class="post-body">
-    {{ content }}
+  <div class="wrap page-body">
+    <div class="prose">
+      {{ content }}
+    </div>
   </div>
 </article>

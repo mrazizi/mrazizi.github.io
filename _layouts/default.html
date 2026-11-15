@@ -12,7 +12,7 @@
   <meta name="author" content="{{ site.author.name }}" />
   <meta name="color-scheme" content="light dark" />
   <meta name="theme-color" content="#f6f5f2" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#141614" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#121412" media="(prefers-color-scheme: dark)" />
   <link rel="canonical" href="{{ page.url | absolute_url }}" />
 
   <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}" />
@@ -26,6 +26,8 @@
   <meta name="twitter:description" content="{{ page_description | escape }}" />
 
   <link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml" />
+  <link rel="preload" href="{{ '/assets/fonts/newsreader-400-normal.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="{{ '/assets/fonts/ibm-plex-sans-400-normal.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}" />
   {% feed_meta %}
 
@@ -47,31 +49,47 @@
 </head>
 <body>
   <header class="site-header">
-    <nav class="site-nav" aria-label="Main">
-      {%- assign nav = "Home|/,Experience|/experience/,Links|/links/,Blog|/blog/" | split: "," -%}
-      {%- for item in nav -%}
-        {%- assign parts = item | split: "|" -%}
-        {%- assign href = parts[1] -%}
-        {%- if href == "/" -%}
-          {%- if page.url == "/" or page.url == "/index.html" %}{% assign active = true %}{% else %}{% assign active = false %}{% endif -%}
-        {%- elsif page.url contains href -%}
-          {%- assign active = true -%}
-        {%- else -%}
-          {%- assign active = false -%}
-        {%- endif %}
-      <a href="{{ href | relative_url }}"{% if active %} aria-current="page"{% endif %}>{{ parts[0] }}</a>
-      {%- endfor %}
-    </nav>
+    <div class="wrap">
+      <a class="brand" href="{{ '/' | relative_url }}">
+        <img src="{{ '/assets/profile.jpg' | relative_url }}" alt="" width="28" height="28" />
+        <span>{{ site.author.name }}</span>
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        {%- assign nav = "Home|/,Experience|/experience/,Links|/links/,Blog|/blog/" | split: "," -%}
+        {%- for item in nav -%}
+          {%- assign parts = item | split: "|" -%}
+          {%- assign href = parts[1] -%}
+          {%- if href == "/" -%}
+            {%- if page.url == "/" or page.url == "/index.html" %}{% assign active = true %}{% else %}{% assign active = false %}{% endif -%}
+          {%- elsif page.url contains href -%}
+            {%- assign active = true -%}
+          {%- else -%}
+            {%- assign active = false -%}
+          {%- endif %}
+        <a href="{{ href | relative_url }}"{% if active %} aria-current="page"{% endif %}>{{ parts[0] }}</a>
+        {%- endfor %}
+      </nav>
+    </div>
   </header>
 
-  <main class="page-shell{% if page.center %} page-shell--center{% endif %}">
+  <main>
     {{ content }}
-
-    <footer>
-      <span>© {{ site.time | date: "%Y" }} {{ site.author.name }}</span>
-      <span class="footer-dot" aria-hidden="true">·</span>
-      <span>Built with Jekyll</span>
-    </footer>
   </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-cta">
+      <p>Building something with AI? <em>Let’s talk.</em></p>
+      <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+    </div>
+    <div class="wrap footer-meta mono">
+      <nav aria-label="Elsewhere">
+        <a href="{{ site.author.github }}" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="{{ site.author.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="{{ site.author.resume | relative_url }}" target="_blank" rel="noopener">CV</a>
+        <a href="{{ '/blog/feed.xml' | relative_url }}">RSS</a>
+      </nav>
+      <span>© {{ site.time | date: "%Y" }} · {{ site.author.name }}</span>
+    </div>
+  </footer>
 </body>
 </html>

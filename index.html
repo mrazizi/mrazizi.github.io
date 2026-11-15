@@ -2,52 +2,35 @@
 layout: default
 title: Mohammad-Reza Azizi — Senior AI Engineer
 description: Mohammad-Reza Azizi is a Senior AI Engineer building production-grade LLM applications, intelligent agents, machine learning systems, and Python backends.
-center: true
 ---
-<section class="card profile-card" aria-labelledby="page-title">
-  <div class="avatar-wrap">
+<section class="wrap hero" aria-labelledby="page-title">
+  <div>
+    <p class="eyebrow">{{ site.author.name }} · AI / ML / Backend</p>
+    <h1 id="page-title"><em>Senior</em><br />AI Engineer<span class="dot">.</span></h1>
+    <p class="lede">
+      I build production-grade AI products, from LLM applications and intelligent agents
+      to machine learning systems and scalable Python backends.
+    </p>
+
+    <nav class="contact-row" aria-label="Contact">
+      <a class="primary" href="mailto:{{ site.author.email }}">{{ site.author.email }}<span class="arrow" aria-hidden="true">↗</span></a>
+      <a href="{{ site.author.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn<span class="arrow" aria-hidden="true">↗</span></a>
+      <a href="{{ site.author.github }}" target="_blank" rel="noopener noreferrer">GitHub<span class="arrow" aria-hidden="true">↗</span></a>
+      <a href="{{ site.author.resume | relative_url }}" target="_blank" rel="noopener">Résumé<span class="arrow" aria-hidden="true">→</span></a>
+    </nav>
+  </div>
+
+  <figure class="figure">
     <img
-      class="avatar"
       src="{{ '/assets/profile.jpg' | relative_url }}"
       alt="Portrait of {{ site.author.name }}"
-      width="152"
-      height="152"
+      width="640"
+      height="640"
       onerror="this.onerror=null;this.src='{{ '/assets/profile-placeholder.svg' | relative_url }}';"
     />
-    <span class="availability-dot" title="Open to opportunities" aria-label="Open to opportunities"></span>
-  </div>
-
-  <p class="eyebrow">AI · Machine Learning · Backend</p>
-  <h1 id="page-title">{{ site.author.name }}</h1>
-  <p class="role">{{ site.author.job_title }}</p>
-  <p class="intro">
-    I build production-grade AI products—from LLM applications and intelligent agents
-    to machine learning systems and scalable Python backends.
-  </p>
-
-  <nav class="primary-actions" aria-label="Primary links">
-    <a class="button button-primary" href="mailto:{{ site.author.email }}">
-      {% include icons/email.svg %}
-      Contact me
-    </a>
-    <a class="button button-secondary" href="{{ site.author.resume | relative_url }}" target="_blank" rel="noopener">
-      {% include icons/resume.svg %}
-      View résumé
-    </a>
-  </nav>
-
-  <div class="social-links" aria-label="Social profiles">
-    <a href="{{ site.author.linkedin }}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
-      {% include icons/linkedin.svg %}
-      <span>LinkedIn</span>
-    </a>
-    <a href="{{ site.author.github }}" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
-      {% include icons/github.svg %}
-      <span>GitHub</span>
-    </a>
-    <a href="mailto:{{ site.author.email }}" aria-label="Send email">
-      {% include icons/email.svg %}
-      <span>Email</span>
-    </a>
-  </div>
+    <figcaption class="caption">
+      <span>Fig. 01 · Portrait</span>
+      <span>Open to remote</span>
+    </figcaption>
+  </figure>
 </section>

@@ -3,21 +3,29 @@ layout: default
 title: Blog — Mohammad-Reza Azizi
 description: Notes by Mohammad-Reza Azizi on AI engineering, LLM applications and Python backends.
 ---
-<section class="card content-card" aria-labelledby="page-title">
-  <h1 id="page-title" class="page-title">Blog</h1>
+<header class="wrap page-head">
+  <p class="eyebrow">Writing</p>
+  <h1 id="page-title">Blog<span class="dot">.</span></h1>
+  <p>Notes on AI engineering, LLM applications and Python backends.</p>
+</header>
 
+<section class="wrap page-body" aria-labelledby="page-title">
   {%- if site.posts.size > 0 %}
-  <ul class="post-list">
+  <ul class="posts">
     {%- for post in site.posts %}
     <li>
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+      <a href="{{ post.url | relative_url }}">
+        <time class="mono" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+        <span class="title">
+          {{ post.title }}
+          {%- if post.description %}<span class="summary">{{ post.description }}</span>{% endif %}
+        </span>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
     </li>
     {%- endfor %}
   </ul>
   {%- else %}
-  <p class="card-note">No posts yet.</p>
+  <p class="empty">No posts yet.</p>
   {%- endif %}
-
-  <p class="card-note"><a href="{{ '/blog/feed.xml' | relative_url }}">RSS feed</a></p>
 </section>

@@ -4,27 +4,31 @@ title: Experience — Mohammad-Reza Azizi
 description: Roles and work of Mohammad-Reza Azizi, Senior AI Engineer.
 permalink: /experience/
 ---
-<section class="card content-card" aria-labelledby="page-title">
-  <h1 id="page-title" class="page-title">Experience</h1>
+{%- assign jobs = site.data.experience -%}
+<header class="wrap page-head">
+  <p class="eyebrow">{{ jobs.size }} roles · {{ jobs.last.start | split: " " | last }} — {{ jobs.first.end | split: " " | last }}</p>
+  <h1 id="page-title">Experience<span class="dot">.</span></h1>
+  <p>LLM applications, recommendation systems and production Python services, from speech models to RAG chatbots.</p>
+</header>
 
-  <ol class="timeline">
-    {%- for job in site.data.experience %}
+<section class="wrap page-body" aria-labelledby="page-title">
+  <p class="section-rule eyebrow"><span class="num">01</span> Roles</p>
+  <ol class="jobs">
+    {%- for job in jobs %}
     <li class="job">
-      <div class="job-head">
-        <h2><a href="{{ job.url }}" target="_blank" rel="noopener noreferrer">{{ job.company }}</a></h2>
-        <p class="job-dates">{{ job.start }} – {{ job.end }}</p>
+      <p class="job-dates mono">{{ job.start }} — {{ job.end }}</p>
+      <div>
+        <h2><a href="{{ job.url }}" target="_blank" rel="noopener noreferrer">{{ job.company }}<span class="arrow" aria-hidden="true">↗</span></a></h2>
+        <p class="job-role">{{ job.title }}</p>
+        <ul>
+          {%- for bullet in job.bullets %}
+          <li>{{ bullet }}</li>
+          {%- endfor %}
+        </ul>
       </div>
-      <p class="job-role">{{ job.title }}</p>
-      <ul>
-        {%- for bullet in job.bullets %}
-        <li>{{ bullet }}</li>
-        {%- endfor %}
-      </ul>
     </li>
     {%- endfor %}
   </ol>
 
-  <p class="card-note">
-    Full details in my <a href="{{ site.author.resume | relative_url }}" target="_blank" rel="noopener">résumé (PDF)</a>.
-  </p>
+  <p class="after-note">Full details in my <a href="{{ site.author.resume | relative_url }}" target="_blank" rel="noopener">résumé (PDF)</a>.</p>
 </section>

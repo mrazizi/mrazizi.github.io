@@ -4,36 +4,39 @@ title: Links — Mohammad-Reza Azizi
 description: How to reach Mohammad-Reza Azizi — email, LinkedIn, GitHub and résumé.
 permalink: /links/
 ---
-<section class="card content-card" aria-labelledby="page-title">
-  <h1 id="page-title" class="page-title">Links</h1>
+<header class="wrap page-head">
+  <p class="eyebrow">Get in touch</p>
+  <h1 id="page-title">Links<span class="dot">.</span></h1>
+</header>
 
-  <ul class="link-list">
+<section class="wrap page-body" aria-labelledby="page-title">
+  <ul class="link-rows">
     <li>
       <a href="mailto:{{ site.author.email }}">
-        {% include icons/email.svg %}
-        <span class="link-label">Email</span>
-        <span class="link-value">{{ site.author.email }}</span>
+        <span class="caption">Email</span>
+        <span class="value">{{ site.author.email }}</span>
+        <span class="arrow" aria-hidden="true">↗</span>
       </a>
     </li>
     <li>
       <a href="{{ site.author.linkedin }}" target="_blank" rel="noopener noreferrer">
-        {% include icons/linkedin.svg %}
-        <span class="link-label">LinkedIn</span>
-        <span class="link-value">linkedin.com/in/mrazizi</span>
+        <span class="caption">LinkedIn</span>
+        <span class="value">in/mrazizi</span>
+        <span class="arrow" aria-hidden="true">↗</span>
       </a>
     </li>
     <li>
       <a href="{{ site.author.github }}" target="_blank" rel="noopener noreferrer">
-        {% include icons/github.svg %}
-        <span class="link-label">GitHub</span>
-        <span class="link-value">github.com/mrazizi</span>
+        <span class="caption">GitHub</span>
+        <span class="value">github.com/mrazizi</span>
+        <span class="arrow" aria-hidden="true">↗</span>
       </a>
     </li>
     <li>
       <a href="{{ site.author.resume | relative_url }}" target="_blank" rel="noopener">
-        {% include icons/resume.svg %}
-        <span class="link-label">Résumé</span>
-        <span class="link-value">PDF</span>
+        <span class="caption">Résumé</span>
+        <span class="value">Download PDF</span>
+        <span class="arrow" aria-hidden="true">→</span>
       </a>
     </li>
   </ul>
