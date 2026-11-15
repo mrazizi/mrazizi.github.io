@@ -1,0 +1,40 @@
+---
+layout: default
+title: Links — Mohammad-Reza Azizi
+description: How to reach Mohammad-Reza Azizi — email, LinkedIn, GitHub and résumé.
+permalink: /links/
+---
+<section class="card content-card" aria-labelledby="page-title">
+  <h1 id="page-title" class="page-title">Links</h1>
+
+  <ul class="link-list">
+    <li>
+      <a href="mailto:{{ site.author.email }}">
+        {% include icons/email.svg %}
+        <span class="link-label">Email</span>
+        <span class="link-value">{{ site.author.email }}</span>
+      </a>
+    </li>
+    <li>
+      <a href="{{ site.author.linkedin }}" target="_blank" rel="noopener noreferrer">
+        {% include icons/linkedin.svg %}
+        <span class="link-label">LinkedIn</span>
+        <span class="link-value">linkedin.com/in/mrazizi</span>
+      </a>
+    </li>
+    <li>
+      <a href="{{ site.author.github }}" target="_blank" rel="noopener noreferrer">
+        {% include icons/github.svg %}
+        <span class="link-label">GitHub</span>
+        <span class="link-value">github.com/mrazizi</span>
+      </a>
+    </li>
+    <li>
+      <a href="{{ site.author.resume | relative_url }}" target="_blank" rel="noopener">
+        {% include icons/resume.svg %}
+        <span class="link-label">Résumé</span>
+        <span class="link-value">PDF</span>
+      </a>
+    </li>
+  </ul>
+</section>

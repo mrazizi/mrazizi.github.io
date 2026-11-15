@@ -1,0 +1,51 @@
+# Taken from apply_automation/profile/master_cv.yaml (experience section).
+# Newest first. Keep 2–3 bullets per role.
+- company: MyTrek AI
+  url: https://mytrekai.com/
+  title: Senior AI Engineer
+  start: Mar 2025
+  end: Feb 2026
+  bullets:
+    - Built a content-based video recommendation system using LLM-generated embeddings, Qdrant, and KNN, with automated data pipelines in Apache Airflow and APIs built with FastAPI and Redis caching.
+    - Developed an awareness detection module for a KYC workflow using MediaPipe head-pose estimation, helping improve the reliability of user verification.
+    - Built production Python microservices with PostgreSQL, Redis, gRPC, and Apache Kafka, supporting reliable service-to-service communication across the platform.
+
+- company: Ceres Technology
+  url: https://www.cerestech.co
+  title: AI Engineer
+  start: Mar 2024
+  end: Mar 2025
+  bullets:
+    - Built and trained LightGBM models on supply-chain data to estimate delay risk, and turned the results into clear charts that helped business teams understand patterns and make better decisions.
+    - Developed a supply-chain analytics chatbot using LangChain, Vanna.ai, OpenAI, and Plotly, allowing users to upload files, query external sources, combine datasets, generate visualizations, and retrieve relevant news.
+    - Built a dataset recommendation service that compared user data against more than 300k datasets and returned relevant results in under 15 minutes using efficient multiprocessing.
+
+- company: Core Decentralized Technologies
+  url: https://codetech.cc/
+  title: AI Engineer
+  start: Mar 2023
+  end: Mar 2024
+  bullets:
+    - Built a content-based video recommendation system using LLM-generated embeddings, storing vectors in Qdrant and finding related videos with KNN. Automated the pipeline with Apache Airflow and exposed it through FastAPI with Redis caching.
+    - Developed an awareness detection module for a KYC workflow using MediaPipe head-pose estimation, improving the accuracy of user verification.
+    - Expanded into broader software engineering by creating Python microservices with PostgreSQL and Redis, implementing service-to-service communication with gRPC and Apache Kafka, managing database migrations with Alembic, and writing thorough unit and integration tests.
+
+- company: Digikala
+  url: https://www.digikala.com/
+  title: Data Scientist
+  start: Feb 2021
+  end: Mar 2023
+  bullets:
+    - Built a complementary recommendation system using KNN on image and text embeddings stored in Qdrant, increasing add-to-cart rate by 70% and daily GMV by 202%, validated through a diff-in-diff experiment.
+    - Optimized a trend-finding algorithm by adding parallel processing across the product catalog, achieving a 1200% speedup in offline processing tasks.
+    - Processed large-scale datasets with Apache Spark and scheduled recurring offline workflows using Apache Airflow.
+
+- company: Part AI Research Center
+  url: https://partdp.ai/en
+  title: Data Scientist / Speech Chapter Lead
+  start: Jan 2020
+  end: Feb 2021
+  bullets:
+    - Trained and evaluated speech models using TensorFlow, PyTorch, ESPNet, Nvidia NeMo, and Optuna, while leading a team of four data scientists through task planning, code reviews, and daily coordination.
+    - Researched and experimented with state-of-the-art ASR models in English, testing different architectures and training approaches.
+    - Created and maintained text and speech datasets, including data collection, cleaning, denoising, and quality control.

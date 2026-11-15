@@ -14,13 +14,33 @@ Recommended: a square JPG, at least 600 × 600 px, under 500 KB. Until then, the
 
 ## Preview locally
 
-From this directory:
+GitHub Pages builds this site with Jekyll. To preview it with the same gems (no local Ruby needed):
 
 ```bash
-python3 -m http.server 8080
+docker run --rm -p 127.0.0.1:4000:4000 -v "$PWD":/srv/site -v mrazizi-gems:/usr/local/bundle -w /srv/site ruby:3.3 sh -c 'bundle install && bundle exec jekyll serve --host 0.0.0.0 -d /tmp/_site --force_polling'
 ```
 
-Then open `http://localhost:8080`.
+Then open `http://localhost:4000`. With Ruby installed, `bundle install && bundle exec jekyll serve` works too.
+
+## Write a blog post
+
+Add `_posts/YYYY-MM-DD-slug.md`:
+
+```markdown
+---
+layout: post
+title: My post title
+description: One-line summary for search and link previews.
+---
+
+Post body in Markdown.
+```
+
+Push to `main` and it appears at the top of `/blog/`. `_posts/2026-11-15-hello-world.md` is a placeholder; delete it once a real post exists.
+
+## Update experience
+
+Roles live in `_data/experience.yml` (copied from the master CV).
 
 ## Publish with GitHub Pages
 

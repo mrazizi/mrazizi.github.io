@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  {%- assign page_title = page.title | default: site.title -%}
+  {%- if page.layout == "post" %}{% assign page_title = page_title | append: " — " | append: site.title %}{% endif -%}
+  {%- assign page_description = page.description | default: page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 200 -%}
+  <title>{{ page_title }}</title>
+  <meta name="description" content="{{ page_description | escape }}" />
+  <meta name="author" content="{{ site.author.name }}" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#f6f5f2" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#141614" media="(prefers-color-scheme: dark)" />
+  <link rel="canonical" href="{{ page.url | absolute_url }}" />
+
+  <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}" />
+  <meta property="og:url" content="{{ page.url | absolute_url }}" />
+  <meta property="og:title" content="{{ page_title | escape }}" />
+  <meta property="og:description" content="{{ page_description | escape }}" />
+  <meta property="og:image" content="{{ '/assets/profile.jpg' | absolute_url }}" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="{{ page_title | escape }}" />
+  <meta name="twitter:description" content="{{ page_description | escape }}" />
+
+  <link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml" />
+  <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}" />
+  {% feed_meta %}
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "{{ site.author.name }}",
+    "url": "{{ '/' | absolute_url }}",
+    "image": "{{ '/assets/profile.jpg' | absolute_url }}",
+    "jobTitle": "{{ site.author.job_title }}",
+    "email": "mailto:{{ site.author.email }}",
+    "sameAs": [
+      "{{ site.author.linkedin }}",
+      "{{ site.author.github }}"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Main">
+      {%- assign nav = "Home|/,Experience|/experience/,Links|/links/,Blog|/blog/" | split: "," -%}
+      {%- for item in nav -%}
+        {%- assign parts = item | split: "|" -%}
+        {%- assign href = parts[1] -%}
+        {%- if href == "/" -%}
+          {%- if page.url == "/" or page.url == "/index.html" %}{% assign active = true %}{% else %}{% assign active = false %}{% endif -%}
+        {%- elsif page.url contains href -%}
+          {%- assign active = true -%}
+        {%- else -%}
+          {%- assign active = false -%}
+        {%- endif %}
+      <a href="{{ href | relative_url }}"{% if active %} aria-current="page"{% endif %}>{{ parts[0] }}</a>
+      {%- endfor %}
+    </nav>
+  </header>
+
+  <main class="page-shell{% if page.center %} page-shell--center{% endif %}">
+    {{ content }}
+
+    <footer>
+      <span>© {{ site.time | date: "%Y" }} {{ site.author.name }}</span>
+      <span class="footer-dot" aria-hidden="true">·</span>
+      <span>Built with Jekyll</span>
+    </footer>
+  </main>
+</body>
+</html>

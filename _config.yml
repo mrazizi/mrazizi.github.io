@@ -1,0 +1,31 @@
+title: Mohammad-Reza Azizi
+description: Mohammad-Reza Azizi is a Senior AI Engineer building production-grade LLM applications, intelligent agents, machine learning systems, and Python backends.
+url: https://mrazizi.com
+baseurl: ""
+lang: en
+
+author:
+  name: Mohammad-Reza Azizi
+  job_title: Senior AI Engineer
+  email: mrazizi.work@gmail.com
+  linkedin: https://www.linkedin.com/in/mrazizi
+  github: https://github.com/mrazizi
+  resume: /assets/Mohammad-Reza-Azizi-Resume.pdf
+
+permalink: /blog/:year/:month/:day/:title/
+timezone: Europe/Berlin
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+feed:
+  path: blog/feed.xml
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .bundle
+  - .jekyll-cache

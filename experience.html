@@ -1,0 +1,30 @@
+---
+layout: default
+title: Experience — Mohammad-Reza Azizi
+description: Roles and work of Mohammad-Reza Azizi, Senior AI Engineer.
+permalink: /experience/
+---
+<section class="card content-card" aria-labelledby="page-title">
+  <h1 id="page-title" class="page-title">Experience</h1>
+
+  <ol class="timeline">
+    {%- for job in site.data.experience %}
+    <li class="job">
+      <div class="job-head">
+        <h2><a href="{{ job.url }}" target="_blank" rel="noopener noreferrer">{{ job.company }}</a></h2>
+        <p class="job-dates">{{ job.start }} – {{ job.end }}</p>
+      </div>
+      <p class="job-role">{{ job.title }}</p>
+      <ul>
+        {%- for bullet in job.bullets %}
+        <li>{{ bullet }}</li>
+        {%- endfor %}
+      </ul>
+    </li>
+    {%- endfor %}
+  </ol>
+
+  <p class="card-note">
+    Full details in my <a href="{{ site.author.resume | relative_url }}" target="_blank" rel="noopener">résumé (PDF)</a>.
+  </p>
+</section>
